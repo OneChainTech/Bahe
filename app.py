@@ -1,7 +1,7 @@
-
 import streamlit as st
 from PIL import Image
 from gradio_client import Client
+import tempfile
 
 # 标题
 # st.title('巴小赫')
