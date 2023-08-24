@@ -27,7 +27,7 @@ music_description = st.text_area('', height=100, max_chars=300)
 st.write('点击生成 30s 音乐')
 # generate_button = st.button('生成音乐')
 # 使用列来居中按钮
-col1, col2, col3 = st.columns([1,3,1])
+col1, col2, col3 = st.columns(3)
 
 with col2:
     button = st.button('生成音乐')
