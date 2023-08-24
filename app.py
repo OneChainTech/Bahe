@@ -19,7 +19,7 @@ if uploaded_file is not None:
 
 # 音乐描述文本输入区域
 st.write('描述您要生成的音乐')
-music_description = st.text_area('', height=100, max_chars=None)
+music_description = st.text_area('上传您喜欢的参考音乐', height=100, max_chars=None)
 
 # 生成音乐按钮
 st.write('点击生成 30s 音乐')
