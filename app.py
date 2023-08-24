@@ -47,7 +47,7 @@ generated_music_files = []
 if button:
     client = Client("https://facebook-musicgen--xstnr.hf.space/")
     result = client.predict(
-                    {music_description},
+                    music_description,
                     path,
                     fn_index=0
     )
