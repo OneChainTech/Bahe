@@ -3,7 +3,7 @@ from PIL import Image
 
 # 标题
 # st.title('巴小赫')
-st.markdown("<h3 style='text-align: left;'>巴小赫</h3>", unsafe_allow_html=True)
+st.markdown("<div style='text-align: left; font-size: 20px;'>巴小赫</div>", unsafe_allow_html=True)
 
 # 图片封面
 image = Image.open('cover.png') # 请替换为实际图片路径
@@ -26,7 +26,7 @@ music_description = st.text_area('', height=100, max_chars=300)
 st.write('点击生成 30s 音乐')
 # generate_button = st.button('生成音乐')
 # 使用列来居中按钮
-col1, col2, col3 = st.beta_columns([1,1,1])
+col1, col2, col3 = st.columns([1,1,1])
 
 with col2:
     button = st.button('生成音乐')
@@ -38,7 +38,7 @@ if button:
 
 # 我的创作标题
 # st.title('我的创作')
-st.markdown("<h3 style='text-align: left;'>我的创作</h3>", unsafe_allow_html=True)
+st.markdown("<div style='text-align: left; font-size: 20px;'>我的创作</div>", unsafe_allow_html=True)
 
 
 # 用户生成音乐媒体列表
