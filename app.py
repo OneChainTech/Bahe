@@ -18,7 +18,7 @@ st.write('上传您喜欢的参考音乐')
 
 uploaded_file = st.file_uploader('', type=['mp3', 'wav'])
 if uploaded_file is not None:
-    st.audio(uploaded_file, format='audio/mp3')
+    # st.audio(uploaded_file, format='audio/mp3')
     
     # 创建一个临时文件
     tfile = tempfile.NamedTemporaryFile(delete=False) 
@@ -63,7 +63,7 @@ st.markdown("""
 ### More details
 The model will generate 12 seconds of audio based on the description you provided.
 You can optionaly provide a reference audio from which a broad melody will be extracted.
-The model will then try to  `follow both the description and melody provided `.
+The model will then try to follow both the description and melody provided.
 All samples are generated with the `melody` model.
 """)
 st.markdown("""Mail to zhenghong596gm@gmail.com""")
