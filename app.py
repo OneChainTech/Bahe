@@ -1,3 +1,4 @@
+
 import streamlit as st
 from PIL import Image
 from gradio_client import Client
@@ -18,6 +19,13 @@ st.write('上传您喜欢的参考音乐')
 uploaded_file = st.file_uploader('', type=['mp3', 'wav'])
 if uploaded_file is not None:
     st.audio(uploaded_file, format='audio/mp3')
+    
+    # 创建一个临时文件
+    tfile = tempfile.NamedTemporaryFile(delete=False) 
+    tfile.write(uploaded_file.read())
+
+    # 获取临时文件的路径
+    path = tfile.name
 
 # 音乐描述文本输入区域
 st.write('描述您要生成的音乐')
@@ -40,7 +48,7 @@ if button:
     client = Client("https://facebook-musicgen--xstnr.hf.space/")
     result = client.predict(
                     {music_description},
-                    {uploaded_file},
+                    path,
                     fn_index=0
     )
     # print(result)
