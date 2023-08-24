@@ -20,6 +20,8 @@ MAX_FILE_SIZE = 1 * 1024 * 1024  # 1MB
 uploaded_file = st.file_uploader('', type=['mp3', 'wav'])
 if uploaded_file is not None:
     # st.audio(uploaded_file, format='audio/mp3')
+    file_size = len(uploaded_file.read())
+    uploaded_file.seek(0)  # Reset file pointer to beginning
     
     if file_size > MAX_FILE_SIZE:
         st.error("File size exceeds the limit of 1MB.")
