@@ -37,17 +37,14 @@ generated_music_files = []
 
 # 按钮点击事件
 if button:
-    with st.spinner('正在生成音乐，请稍候...'):
-        # 在此处添加音乐生成的代码
-        client = Client("https://facebook-musicgen--xstnr.hf.space/")
-        result = client.predict(
-        				"Howdy!",	# str  in 'Describe your music' Textbox component
-        				"https://github.com/gradio-app/gradio/raw/main/test/test_files/audio_sample.wav",	# str (filepath or URL to file) in 'File' Audio component
-        				fn_index=0
-        )
-        # print(result)
-        generated_music_files.append(result)
-   st.success('音乐生成成功！')     
+    client = Client("https://facebook-musicgen--xstnr.hf.space/")
+    result = client.predict(
+                    "Howdy!",	# str  in 'Describe your music' Textbox component
+                    "https://github.com/gradio-app/gradio/raw/main/test/test_files/audio_sample.wav",	# str (filepath or URL to file) in 'File' Audio component
+                    fn_index=0
+    )
+    # print(result)
+    generated_music_files.append(result)  
 
 # 我的创作标题
 # 显示生成的音乐
