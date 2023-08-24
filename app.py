@@ -27,27 +27,30 @@ music_description = st.text_area('', height=100, max_chars=300)
 st.write('点击生成 30s 音乐')
 # generate_button = st.button('生成音乐')
 # 使用列来居中按钮
-col1, col2, col3 = st.columns(3)
+col1, col2, col3, col4, col5 = st.columns(5)
 
-with col2:
+with col3:
     button = st.button('生成音乐')
+
+# 存储已生成的音乐文件路径
+generated_music_files = []
 
 # 按钮点击事件
 if button:
-    st.write('音乐生成中...')
-    # 在此处添加音乐生成的代码
-    client = Client("https://facebook-musicgen--xstnr.hf.space/")
-    result = client.predict(
-    				"Howdy!",	# str  in 'Describe your music' Textbox component
-    				"https://github.com/gradio-app/gradio/raw/main/test/test_files/audio_sample.wav",	# str (filepath or URL to file) in 'File' Audio component
-    				fn_index=0
-    )
-    print(result)
+    with st.spinner('正在生成音乐，请稍候...'):
+        # 在此处添加音乐生成的代码
+        client = Client("https://facebook-musicgen--xstnr.hf.space/")
+        result = client.predict(
+        				"Howdy!",	# str  in 'Describe your music' Textbox component
+        				"https://github.com/gradio-app/gradio/raw/main/test/test_files/audio_sample.wav",	# str (filepath or URL to file) in 'File' Audio component
+        				fn_index=0
+        )
+        # print(result)
+        generated_music_files.append(result)
+   st.success('音乐生成成功！')     
 
 # 我的创作标题
-# st.title('我的创作')
-st.markdown("<div style='text-align: left; font-size: 20px;'>我的创作</div>", unsafe_allow_html=True)
-
-
-# 用户生成音乐媒体列表
-# 这里可以根据实际情况添加音乐列表
+# 显示生成的音乐
+st.title('我的创作')
+for music_file in generated_music_files:
+    st.audio(music_file)
