@@ -11,7 +11,7 @@ st.image(image, use_column_width=True)
 # 上传参考音乐
 # st.write('上传您喜欢的参考音乐')
 # 使用Markdown和HTML实现标题居中
-st.markdown("<h3 style='text-align: center;'>上传您喜欢的参考音乐</h3>", unsafe_allow_html=True)
+st.markdown("<div style='text-align: center; font-size: smaller; font-weight: 300; color: #808080;'>上传您喜欢的参考音乐</div>", unsafe_allow_html=True)
 
 uploaded_file = st.file_uploader('', type=['mp3', 'wav'])
 if uploaded_file is not None:
