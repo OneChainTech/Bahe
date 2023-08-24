@@ -16,6 +16,9 @@ st.write('上传您喜欢的参考音乐')
 # 使用Markdown和HTML实现标题居中
 # st.markdown("<div style='text-align: center; font-size: smaller; font-weight: 300; color: #808080;'>上传您喜欢的参考音乐</div>", unsafe_allow_html=True)
 
+# 设置上传文件大小限制为10MB
+st.set_page_config(server_max_uploaded_file_size=0.1)
+
 uploaded_file = st.file_uploader('', type=['mp3', 'wav'])
 if uploaded_file is not None:
     # st.audio(uploaded_file, format='audio/mp3')
@@ -34,14 +37,16 @@ music_description = st.text_area('', height=100, max_chars=300)
 # 生成音乐按钮
 st.write('点击生成 12s 音乐')
 # generate_button = st.button('生成音乐')
-# 使用列来居中按钮
-col1, col2, col3, col4, col5 = st.columns(5)
+# # 使用列来居中按钮
+# col1, col2, col3, col4, col5 = st.columns(5)
 
-with col3:
-    button = st.button('生成音乐')
+# with col3:
+#     button = st.button('生成音乐')
+
+button = st.button('生成音乐')
     
 # 存储已生成的音乐文件路径
-generated_music_files = []
+# generated_music_files = []
 
 # 按钮点击事件
 if button:
@@ -52,11 +57,12 @@ if button:
                     fn_index=0
     )
     # print(result)
-    generated_music_files.append(result)  
+    # generated_music_files.append(result)  
 
     st.markdown("<div style='text-align: left; font-size: 20px; margin-bottom: 15px;'>我的创作</div>", unsafe_allow_html=True)
-    for music_file in generated_music_files:
-        st.audio(music_file)
+    # for music_file in generated_music_files:
+    #     st.audio(music_file)
+    st.audio(result)
 
 # 模型说明
 st.markdown("""
