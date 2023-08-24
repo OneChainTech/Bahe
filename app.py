@@ -16,7 +16,7 @@ st.write('上传您喜欢的参考音乐')
 # 使用Markdown和HTML实现标题居中
 # st.markdown("<div style='text-align: center; font-size: smaller; font-weight: 300; color: #808080;'>上传您喜欢的参考音乐</div>", unsafe_allow_html=True)
 
-uploaded_file = st.file_uploader('', type=['mp3', 'wav'])
+uploaded_file = st.file_uploader('upload', type=['mp3', 'wav'], label_visibility=False)
 if uploaded_file is not None:
     st.audio(uploaded_file, format='audio/mp3')
     
