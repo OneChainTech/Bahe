@@ -32,20 +32,14 @@ st.write('描述您要生成的音乐')
 music_description = st.text_area('', height=100, max_chars=300)
 
 # 生成音乐按钮
-st.write('点击生成 30s 音乐')
+st.write('点击生成 12s 音乐')
 # generate_button = st.button('生成音乐')
 # 使用列来居中按钮
 col1, col2, col3, col4, col5 = st.columns(5)
 
-with col2:
+with col3:
     button = st.button('生成音乐')
-with col4:
-    reset = st.button('重置')
     
-# 重置按钮
-if reset:
-    st.session_state.clear()    
-
 # 存储已生成的音乐文件路径
 generated_music_files = []
 
@@ -64,3 +58,11 @@ if button:
     for music_file in generated_music_files:
         st.audio(music_file)
 
+# 模型说明
+st.markdown("""
+### More details
+The model will generate 12 seconds of audio based on the description you provided.
+You can optionaly provide a reference audio from which a broad melody will be extracted.
+The model will then try to follow both the description and melody provided.
+All samples are generated with the `melody` model.
+""")
