@@ -5,7 +5,7 @@ import tempfile
 
 # 标题
 # st.title('巴小赫')
-st.markdown("<div style='text-align: left; font-size: 20px; margin-bottom: 15px;'>巴小赫</div>", unsafe_allow_html=True)
+# st.markdown("<div style='text-align: left; font-size: 20px; margin-bottom: 15px;'>巴小赫</div>", unsafe_allow_html=True)
 
 # 图片封面
 image = Image.open('cover.png') # 请替换为实际图片路径
@@ -64,5 +64,7 @@ st.markdown("""
 The model will generate 12 seconds of audio based on the description you provided.
 You can optionaly provide a reference audio from which a broad melody will be extracted.
 The model will then try to follow both the description and melody provided.
-All samples are generated with the `melody` model.
+All samples are generated with the `melody` model. @zhenghong596gm
 """)
+
+
