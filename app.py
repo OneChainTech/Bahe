@@ -5,7 +5,7 @@ from PIL import Image
 st.title('巴小赫')
 
 # 图片封面
-image = Image.open('cover_image.jpg') # 请替换为实际图片路径
+image = Image.open('cover.png') # 请替换为实际图片路径
 st.image(image, use_column_width=True)
 
 # 上传参考音乐
