@@ -72,6 +72,9 @@ st.markdown(""":mailbox: Mail to zhenghong596gm@gmail.com""")
 hide_streamlit_style = """<style>#MainMenu {visibility: hidden;} footer {visibility: hidden;}</style>"""
 st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
+hide_streamlit_style = """<style>.stApp [data-testid="stToolbar"]{ display:none;}</style>"""
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+
 
 
 
