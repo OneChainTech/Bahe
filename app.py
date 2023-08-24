@@ -39,15 +39,13 @@ generated_music_files = []
 if button:
     client = Client("https://facebook-musicgen--xstnr.hf.space/")
     result = client.predict(
-                    "Howdy!",	# str  in 'Describe your music' Textbox component
-                    "https://github.com/gradio-app/gradio/raw/main/test/test_files/audio_sample.wav",	# str (filepath or URL to file) in 'File' Audio component
+                    {music_description},
+                    {uploaded_file},
                     fn_index=0
     )
     # print(result)
     generated_music_files.append(result)  
 
-# 我的创作标题
-# 显示生成的音乐
-st.title('我的创作')
-for music_file in generated_music_files:
-    st.audio(music_file)
+    st.markdown("<div style='text-align: left; font-size: 20px; margin-bottom: 15px;'>我的创作</div>", unsafe_allow_html=True)
+    for music_file in generated_music_files:
+        st.audio(music_file)
