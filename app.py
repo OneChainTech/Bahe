@@ -37,8 +37,14 @@ st.write('点击生成 30s 音乐')
 # 使用列来居中按钮
 col1, col2, col3, col4, col5 = st.columns(5)
 
-with col3:
+with col2:
     button = st.button('生成音乐')
+with col4:
+    reset = st.button('重置')
+    
+# 重置按钮
+if reset:
+    st.session_state.clear()    
 
 # 存储已生成的音乐文件路径
 generated_music_files = []
@@ -57,3 +63,4 @@ if button:
     st.markdown("<div style='text-align: left; font-size: 20px; margin-bottom: 15px;'>我的创作</div>", unsafe_allow_html=True)
     for music_file in generated_music_files:
         st.audio(music_file)
+
