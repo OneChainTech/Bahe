@@ -61,12 +61,12 @@ if button:
 # 模型说明
 st.markdown("""
 ### More details
-The model will generate 12 seconds of audio based on the description you provided.
+:fire: The model will generate 12 seconds of audio based on the description you provided.
 You can optionaly provide a reference audio from which a broad melody will be extracted.
 The model will then try to follow both the description and melody provided.
 All samples are generated with the `melody` model.
 """)
-st.markdown("""Mail to zhenghong596gm@gmail.com""")
+st.markdown(""":email: zhenghong596gm@gmail.com""")
 
 # 隐藏
 hide_menu_style = """
